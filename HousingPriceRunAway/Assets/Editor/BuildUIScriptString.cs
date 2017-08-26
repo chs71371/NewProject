@@ -18,44 +18,24 @@ public class #UIName# : UIBase
     public override void OnRelease()
     {
     }
-    #refresh#
+     
 
 //auto generatescript,do not make script under this line==
     #region UI对象初始化
     public override void OnAutoLoadedUIObj()
 	{
-        #AddListener#
+       
 		#OnAutoLoadedUIObj#
 		OnLoadedUIObj();
 
 	}
 	public override void OnAutoRelease()
 	{
-        #RemoveListener#
+       
         OnRelease();
 		#OnAutoRelease#
 	}
 	#Member#
-    #endregion
-}
-";
-    public static string NewUIIconClass =
-@"using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
-
-public class #UIName# : MonoBehaviour
-{
-//auto generatescript,do not make script under this line==
-    #region UI对象初始化
-    public static #UIName# Initialization(GameObject ob)
-    {
-        GameObject GameObj = GameObject.Instantiate(ob) as GameObject;
-        #UIName# #object# = GameObj.AddComponent<#UIName#>();
-        #OnAutoRelease#
-        return #object#;
-    }
-    #Member#
     #endregion
 }
 ";
